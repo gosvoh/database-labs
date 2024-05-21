@@ -39,3 +39,4 @@ next-env.d.ts
 Dockerfile
 .dockerignore
 .git
+.env.example
