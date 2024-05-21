@@ -1,7 +1,7 @@
 "use client";
 
 import { App, Button, Form, Input, Space, Table } from "antd";
-import { customQuery } from "./actions";
+import { customQuery } from "../actions";
 import React, { useEffect, useState } from "react";
 
 export default function CustomQuery() {

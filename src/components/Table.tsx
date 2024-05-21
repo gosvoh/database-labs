@@ -1,10 +1,10 @@
 "use client";
 
 import { Button, Popconfirm, Table, TableProps } from "antd";
-import { Data } from "./page";
+import { Data } from "../app/page";
 import SpaceCompact from "./SpaceCompact";
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
-import { deleteRow } from "./actions";
+import { deleteRow } from "../actions";
 import { useSearchParams } from "next/navigation";
 import ButtonModal from "./ButtonModal";
 

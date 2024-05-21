@@ -1,8 +1,8 @@
 "use client";
 
 import { App, Button, Form as AntdForm, Input, FormInstance } from "antd";
-import { addRow } from "./actions";
-import { Data } from "./page";
+import { addRow } from "../actions";
+import { Data } from "../app/page";
 import { useEffect } from "react";
 
 const ColumnType = {
@@ -72,6 +72,7 @@ export default function ButtonModal({
   icon,
   text,
   data,
+  disabled,
 }: {
   columns: { name?: string; type?: number; flags?: number }[];
   table: string | null;
@@ -79,12 +80,14 @@ export default function ButtonModal({
   icon?: React.ReactNode;
   text?: string;
   data?: Data[0];
+  disabled?: boolean;
 }) {
   const [form] = AntdForm.useForm();
   const { modal } = App.useApp();
 
   return (
     <Button
+      disabled={disabled}
       icon={icon}
       onClick={() => {
         const mod = modal.confirm({

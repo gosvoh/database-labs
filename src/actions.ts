@@ -25,6 +25,8 @@ export async function deleteRow(table: string, id: number) {
 
 export async function customQuery(customQuery: string) {
   const res = (await query(customQuery))[0] as unknown[];
-  if (Array.isArray(res)) return res;
-  else return JSON.stringify(res);
+  if (Array.isArray(res)) {
+    if (Array.isArray(res[0])) return res[0];
+    return res;
+  } else return JSON.stringify(res);
 }
